@@ -1,9 +1,12 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import Header from './components/Header';
+
 
 const ClientApp = () => (
   <>
-  <header>header, nav... <Link to="/admin/">Admin</Link> </header>
+    <Header />
+    <main>Hi there, its content</main>
+    <footer>Copyrght 2025</footer>
   </>
 );
 

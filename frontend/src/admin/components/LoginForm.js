@@ -5,7 +5,7 @@ const LoginForm = ({ onSubmit, error }) => {
   const [password, setPassword] = React.useState('');
 
   const handleSubmit = (e) => {
-    e.persist();
+    e.preventDefault();
     onSubmit(username, password);
   };
 

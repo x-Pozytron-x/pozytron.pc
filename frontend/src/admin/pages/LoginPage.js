@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate  } from 'react-router-dom';
 import LoginForm from '../components/LoginForm';
 import { login } from '../services/api';
 
 const LoginPage = () => {
   const [error, setError] = useState(null);
-
+  const navigate = useNavigate();
+  
   const handleLogin = async (username, password) => {
     try {
       const response = await login(username, password);
       console.log('Успешный вход:', response);
+      navigate('/admin/dashboard');
       // Сохрани токен или редирект на главную страницу админки
     } catch (err) {
       setError('Ошибка входа');
