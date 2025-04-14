@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { login } from '../services/api';
 
@@ -9,9 +9,14 @@ const LoginPage = () => {
   const [error, setError] = useState('');
   const { login: loginToContext, isAuthenticated } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Проверяем, есть ли сообщение о разлогине в параметрах
+  const loggedOutMessage = location.state?.loggedOut ? 'You have been logged out.' : null;
 
   useEffect(() => {
     if (isAuthenticated) {
+      console.log('isAuthenticated is true, navigating to /admin/');
       navigate('/admin/'); // Должно перенаправить на /admin/
     }
   }, [isAuthenticated, navigate]);
@@ -37,6 +42,7 @@ const LoginPage = () => {
   return (
     <div>
       <h2>Login</h2>
+      {loggedOutMessage && <p style={{ color: 'green' }}>{loggedOutMessage}</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <form onSubmit={handleSubmit}>
         <div>

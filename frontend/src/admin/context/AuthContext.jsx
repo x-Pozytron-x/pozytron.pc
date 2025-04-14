@@ -44,8 +44,10 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
+    console.log('Logging out...');
     localStorage.removeItem('authToken');
     setIsAuthenticated(false);
+    console.log('Logged out, isAuthenticated set to false');
   };
 
   if (loading) {
