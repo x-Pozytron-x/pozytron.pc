@@ -5,7 +5,7 @@ import {Link } from 'react-router-dom';
 
 import '../styles/Header.scss';
 
-export default () => {
+const Header = function () {
   return (
     <header className='header'>
       <div className='header__logo'>
@@ -22,5 +22,4 @@ export default () => {
     </header>
   );
 };
-
-// default Header; // Должно быть export default
+export default Header;

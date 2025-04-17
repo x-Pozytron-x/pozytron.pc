@@ -3,6 +3,8 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { login } from '../services/api';
 
+import '../styles/Form.scss';
+
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -40,30 +42,35 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
+    <div className='login'>
       {loggedOutMessage && <p style={{ color: 'green' }}>{loggedOutMessage}</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Username:</label>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
+      <form className='form' onSubmit={handleSubmit}>
+        <h2 className='form__title'>Enter to Admin Panel</h2>
+        <div className='form__body'>
+          <label className='form__label'>
+            <input
+              className='form__input'
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+              autoComplete='username'
+              placeholder='Usename'
+            />
+          </label>
+          <label className='form__label'>
+            <input
+              className='form__input'
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              autoComplete='password'
+            />
+          </label>
+          <button className='btn form__btn' type="submit">Login</button>
         </div>
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Login</button>
       </form>
     </div>
   );
