@@ -1,84 +1,83 @@
 # Pozytron Portfolio | Fullstack Developer Showcase
 
-<!-- ![Project Preview](frontend/public/preview.jpg)   -->
+<!-- ![Project Preview](frontend/public/preview.jpg) -->
 
-**Комбинированное портфолио с React-фронтендом и PHP-бэкендом**, включающее:
-- Публичную часть с проектами
-- Админку для управления контентом
-- Систему хранения сообщений из контактной формы
+**A combined portfolio with a React frontend and PHP backend**, featuring:
+- A public section with projects
+- An admin panel for content management
+- A system for storing messages from the contact form
 
-## 🚀 Технологический стек
+## 🚀 Tech Stack
 ### Frontend
 - React 18 (SPA)
 - React Router v6
 - SCSS/Styled Components
 
 ### Backend
-- PHP 5.6 (с поддержкой MySQLi)
+- PHP 5.6 (with MySQLi support)
 
-### База данных
+### Database
 - MySQL 5.7+
-- Таблицы: projects, messages, users, config
+- Tables: projects, messages, users, config
 
-## 📦 Установка и запуск
+## 📦 Installation and Setup
 
-### Бэкенд (PHP)
+### Backend (PHP)
 ```bash
 cd backend
-cp config.example.php config.php # Настройте доступы к БД
+cp config.example.php config.php # Configure database credentials
 php -S localhost:8000 -t backend/public http://localhost:8000
 ```
 
-### Фронтенд (React)
+### Frontend (React)
 ```bash
 cd frontend
 npm install
-npm start # Запустится на http://localhost:3000
+npm start # Runs on http://localhost:3000
 ``` 
 
-## 🗂 Структура проекта
+## 🗂 Project Structure
 ```
 /project-root
 │
-├── /backend                     # Бэкенд (PHP)
-│   ├── /config                  # Конфигурационные файлы
-│   ├── /controllers             # Контроллеры для обработки API-запросов
-│   ├── /models                  # Модели для работы с БД
-│   ├── /public                  # Папка для публичных файлов (например, index.php)
-│   ├── /routes                  # Маршруты для API
+├── /backend                     # Backend (PHP)
+│   ├── /config                  # Configuration files
+│   ├── /controllers             # Controllers for handling API requests
+│   ├── /models                  # Models for database interactions
+│   ├── /public                  # Public files (e.g., index.php)
+│   ├── /routes                  # API routes
 │
-├── /frontend                    # Фронтенд (React)
-│   ├── /build                   # Скомпилированные файлы для деплоя
-│   ├── /node_modules            # Папка для зависимостей фронтенда
-│   ├── /public                  # Публичные файлы (например, favicon)
-│   ├── /src                     # Исходный код React (все компоненты и логику)
-│   │   ├── /admin               # Админка 
-│   │   │   ├── /components      # Компоненты админки
-│   │   │   ├── /context
-│   │   │   ├── /pages           # Страницы для админки (например, Settings, LoginPage)
-│   │   │   ├── /services        # Сервисы для API-запросов в админке
-│   │   │   ├── /styles          # Стили для админки 
-│   │   │   └── /AdminApp.js     # "Точка входа" для админки
+├── /frontend                    # Frontend (React)
+│   ├── /build                   # Compiled files for deployment
+│   ├── /node_modules            # Frontend dependencies
+│   ├── /public                  # Public files (e.g., favicon)
+│   ├── /src                     # React source code (components and logic)
+│   │   ├── /admin               # Admin panel
+│   │   │   ├── /components      # Admin panel components
+│   │   │   ├── /context         # Context for state management
+│   │   │   ├── /pages           # Admin panel pages (e.g., Settings, LoginPage)
+│   │   │   ├── /services        # Services for API requests in the admin panel
+│   │   │   ├── /styles          # Styles for the admin panel
+│   │   │   └── /AdminApp.js     # Entry point for the admin panel
 │   │   │
-│   │   ├── /client              # Основной сайт
-│   │   │   ├── /components      # Компоненты для сайта
-│   │   │   ├── /pages           # Страницы сайта (например, Home, About)
-│   │   │   ├── /services        # Сервисы для API-запросов в сайт
-│   │   │   └── /styles          # Стили для сайта 
-│   │   │   └── /index.js        # "Точка входа" для сайта
-
+│   │   ├── /client              # Main website
+│   │   │   ├── /components      # Website components
+│   │   │   ├── /pages           # Website pages (e.g., Home, About)
+│   │   │   ├── /services        # Services for API requests in the website
+│   │   │   ├── /styles          # Styles for the website
+│   │   │   └── /index.js        # Entry point for the website
 ```
 
-## 🔒 Доступы для админки
-По умолчанию:
-- Логин: `admin`
-- Пароль: `123` (⚠️ изменить перед деплоем!)
+## 🔒 Admin Panel Access
+Default login:
+- Username: admin
+- Password: 123 (⚠️ Change this before deployment!)
 
-## 📝 Планы по развитию
-- [ ] Добавить мультиязычность
-- [ ] Реализовать загрузку изображений
-- [ ] Переход на PHP 8.2+
+## 📝 Roadmap
+- [ ] Add multilingual support
+- [ ] Implement portfolio/image uploading
+- [ ] Upgrade to PHP 8.2+
 
 
-## 📄 Лицензия
+## 📄 License
 MIT © 2023 [Stetsenko Vitalii] | [pozytron.dev]
