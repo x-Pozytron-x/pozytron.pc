@@ -48,6 +48,38 @@ code {
     monospace;
 }
 
+body {
+  background: #101217;
+  color: #6b7a86;
+}
+
+main {
+  margin-top: 45px;
+
+  .banner__logo {
+    display: inline-block;
+    // margin-left: 25px;
+    margin: 0  6px 0 3px;
+    width: 60px;
+    height: 75px;
+    background-color: #79d9d9;
+    -webkit-mask: url('./../../../public/logo_re.svg') no-repeat center;
+    mask: url('./../../../public/logo_re.svg') no-repeat center;
+  }
+}
+
+.banner__title {
+  display: flex;
+  align-items: center;
+  padding: 5px 25px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 10vmax;
+  background-image: linear-gradient(129deg, #79d9d9, #844fa6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+}
+
 .btn {
   background: var(--color_title);
   color: var(--block_bg);
