@@ -11,8 +11,8 @@ const Dashboard = () => {
   return (
     <div className='App'> 
       <AdminHeader />
-        <AdminMenu />
-        <main className='main dashboard'>
+      <AdminMenu />
+      <main className='main dashboard'>
         doshbord
       </main>
     </div>

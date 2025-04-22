@@ -59,3 +59,17 @@ export const markMessageAsRead = async (id) => {
     method: 'PUT',
   });
 };
+
+export const save_data = async ({ table, data, where = null }) => {
+  return fetchWithToken('/index.php/api/save_data', {
+    method: 'POST',
+    body: JSON.stringify({ table, data, where }),
+  });
+};
+
+export const get_data = async ({ table, columns = ['*'], where = null }) => {
+  return fetchWithToken('/index.php/api/get_data', {
+    method: 'POST',
+    body: JSON.stringify({ table, columns, where }),
+  });
+};
