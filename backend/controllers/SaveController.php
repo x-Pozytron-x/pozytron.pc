@@ -34,8 +34,7 @@ class SaveController
     }
 
     // Проход по каждой паре name/value
-    $stmt = $db->prepare("INSERT INTO config (name, value) VALUES (:name, :value)
-                          ON DUPLICATE KEY UPDATE value = :value");
+    $stmt = $db->prepare("INSERT INTO $table (name, value) VALUES (:name, :value) ON DUPLICATE KEY UPDATE value = :value");
 
     foreach ($data as $item) {
       if (!isset($item['name']) || !isset($item['value'])) {

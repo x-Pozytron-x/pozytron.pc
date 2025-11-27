@@ -8,9 +8,10 @@ const fetchWithToken = async (url, options = {}) => {
   if (token) {
     headers.Authorization = 'Bearer ' + token; // Добавляем префикс Bearer
   }
-  const response = await fetch(`${API_URL}${url}`, { ...options, headers });
+  const response = await fetch(`${API_URL}${url}`, { ...options, headers }); 
+  console.log(options)
   if (!response.ok) {
-    throw new Error(`Request failed: ${response.status}`);
+    throw new Error(`Request failed and ololo: ${response.status}`);
   }
   return response.json();
 };
@@ -61,6 +62,7 @@ export const markMessageAsRead = async (id) => {
 };
 
 export const save_data = async ({ table, data, where = null }) => {
+  console.log('from save - ' + table);
   return fetchWithToken('/index.php/api/save_data', {
     method: 'POST',
     body: JSON.stringify({ table, data, where }),

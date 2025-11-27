@@ -19,7 +19,7 @@ const AdminMenu = () => {
       <NavLink className='adminMenu__item' to="/skills">
         <i className="fa fa-diamond" /> Skills
       </NavLink> 
-      <NavLink className='adminMenu__item' to="/projects">
+      <NavLink className={({ isActive }) => (isActive ? 'adminMenu__item adminMenu__item-active' : 'adminMenu__item')} to="/admin/projects">
         <i className="fa fa-suitcase" /> Projects
       </NavLink> 
       <NavLink className={({ isActive }) => (isActive ? 'adminMenu__item adminMenu__item-active' : 'adminMenu__item')} to="/admin/settings">

@@ -59,7 +59,7 @@ const Settings = () => {
   };
 
   return (
-    <div className='App'>
+    <div className='App admin'>
       <AdminHeader />
       <AdminMenu />
       <main className='main settings'>

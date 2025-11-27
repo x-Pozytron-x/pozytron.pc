@@ -9,7 +9,7 @@ import AdminMenu from '../components/AdminMenu';
 const Dashboard = () => {
 
   return (
-    <div className='App'> 
+    <div className='App admin'> 
       <AdminHeader />
       <AdminMenu />
       <main className='main dashboard'>
