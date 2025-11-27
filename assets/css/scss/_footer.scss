@@ -1,0 +1,22 @@
+
+.contact-section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+.contact-item strong {
+  color: var(--accent);
+}
