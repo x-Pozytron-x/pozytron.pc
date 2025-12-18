@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+// Observer pattern  GoF in JS
+class EventEmitter {
+  constructor() {
+    this.events = {};
+  }
+
+  subscribe(eventName, callback) {
+    if (!this.events[eventName]) {
+      this.events[eventName] = [];
+    }
+    this.events[eventName].push(callback);
+  }
+
+  emit(eventName, data) {
+    if (this.events[eventName]) {
+      this.events[eventName].forEach(eventCallback => eventCallback(data));
+    }
+  }
+} 
+
+const emitter = new EventEmitter();
+
+emitter.subscribe("userLogin", (user) => {
+  console.log(`Hi, ${user.name}!`);
+});
+emitter.subscribe("userExit", (user) => {
+  console.log(`GoodBye, ${user.name}!`);
+});
+
+emitter.emit("userLogin", { name: "Vitalii" });
+emitter.emit("userLogin", { name: "Josef" });
+emitter.emit("userExit", { name: "Vitalii" });
+
+ 
+
+  </script>
+</body>
+</html>
