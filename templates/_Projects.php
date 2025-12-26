@@ -58,7 +58,7 @@ $projects = [
 
 <section class="projects-section">
   <h2 class="section-title">Featured Projects</h2>
-  <div class="projects-grid">
+  <div>
 
     <?php foreach ($projects as $project) { ?>
     <div class="project-card fade-in">

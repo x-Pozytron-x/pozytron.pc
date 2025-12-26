@@ -25,5 +25,5 @@ function tr($section, $key) {
   return Translation::get($section, $key);
 }
 
-
+// test comment
 ?>

@@ -1,20 +1,31 @@
 /* banner Section */
 .banner {
-  padding: 60px 0 80px;
+  padding: 35px 0 50px;
   text-align: left;
   position: relative;
 
+  @include respond(sm) {
+    padding: 60px 0 80px;
+  }
+
   img {
+    display: none;
     position: absolute;
     z-index: 0;
     transform: skewX(-10deg);
     right: 0;
     top: 50%;
     margin-top: -100px;
+    max-width: 90vw;
+
+    @include respond(md) {
+      display: block;
+    }
   }
 }
 
 .banner-subtitle {
+  display: none;
   position: relative;
   z-index: 2;
   font-size: 14px;
@@ -28,7 +39,7 @@
 .banner-title {
   position: relative;
   z-index: 2;
-  font-size: clamp(65px, 5vw, 70px);
+  font-size: clamp(45px, 5vw, 50px);
   font-weight: 800;
   line-height: 1.0;
   background: var(--gradient-text);
@@ -36,6 +47,10 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 30px;
+
+  @include respond(sm) {
+    font-size: clamp(65px, 5vw, 70px);
+  }
 }
 
 .banner-description {

@@ -1,14 +1,13 @@
-
 @import "fonts";
 @import "font-awesome.min";
 
-// @import "scss/var";
+@import "scss/var";
 
 @import "scss/global";
 
-// @import "scss/header";
-// @import "scss/main";
-// @import "scss/banner";
+@import "scss/header";
+@import "scss/main";
+@import "scss/banner";
 
 @import "scss/achievements";
 
@@ -22,4 +21,4 @@
 
 
 
-@import "scss/footer";
+@import "scss/aside";
